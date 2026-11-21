@@ -1,0 +1,87 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlserver"
+}
+
+model makwenat_tab {
+  mukwenID        Int     @id(map: "PK_makwenat_tab") @default(autoincrement())
+  projectID       Int?
+  mukwenName      String? @db.NVarChar(Max)
+  KulfaTotal      String? @db.NVarChar(250)
+  txtehala        String? @db.NVarChar(250)
+  txtcompany      String? @db.NVarChar(250)
+  txtakedNumber   String? @db.NVarChar(250)
+  dtakedDate      String? @db.NVarChar(250)
+  txtnotes        String? @db.NVarChar(Max)
+  muda            String? @db.NVarChar(250)
+  txtLocation     String? @db.NVarChar(250)
+  txtContractName String? @db.NVarChar(Max)
+  txtMobashraDate String? @db.NVarChar(50)
+  txtMokemName    String? @db.NVarChar(150)
+  txtMobile       String? @db.NVarChar(50)
+  imageData       String? @db.VarChar(Max)
+}
+
+model motabaa_fanya_tab {
+  motabaaFanyID  Int     @id(map: "PK_motabaa_fanya_tab") @default(autoincrement())
+  proID          Int?
+  mokawenID      Int?
+  bookNumber     String? @db.NVarChar(50)
+  bookDate       String? @db.NVarChar(50)
+  engazFany      String? @db.NVarChar(50)
+  engazMokhatat  String? @db.NVarChar(50)
+  mokef          String? @db.NVarChar(50)
+  notes          String? @db.NVarChar(Max)
+  nesbatEnheraf  String? @db.NVarChar(50)
+  txtEstelamDate String? @db.NVarChar(50)
+}
+
+model motabaa_Maly_tab {
+  motabaaMalyID Int       @id(map: "PK_motabaa_Maly_tab") @default(autoincrement())
+  proID         Int?
+  mokawenID     Int?
+  SanadNumber   String?   @db.NVarChar(50)
+  SanadDate     DateTime? @db.DateTime
+  SanadType     String?   @db.NVarChar(50)
+  MablagMasrof  String?   @db.NVarChar(50)
+  notes         String?   @db.NVarChar(Max)
+}
+
+model motabaa_Qanwny_tab {
+  motabaaQanwneyaID  Int     @id(map: "PK_motabaa_Qanwny_tab") @default(autoincrement())
+  proID              Int?
+  mokawenID          Int?
+  txtMulhekName      String? @db.NVarChar(250)
+  dtBookDate         String? @db.NVarChar(50)
+  txtBookNumber      String? @db.NVarChar(50)
+  txtMablag          String? @db.NVarChar(50)
+  txtModa            String? @db.NVarChar(50)
+  txtnotes           String? @db.NVarChar(Max)
+  txtMablagEstehdath String? @db.NVarChar(150)
+}
+
+model project_tab {
+  proID         Int     @id(map: "PK_project-tab") @default(autoincrement())
+  Estethmar     String? @db.NVarChar(210)
+  Bab           String? @db.NVarChar(210)
+  Keshem        String? @db.NVarChar(210)
+  Qataa         String? @db.NVarChar(210)
+  Mada          String? @db.NVarChar(210)
+  Nawaa         String? @db.NVarChar(210)
+  Tasalsl       String? @db.NVarChar(240)
+  proname       String? @db.NVarChar(240)
+  KalfaEdrag    String? @db.NVarChar(240)
+  Jehamostafed  String? @db.NVarChar(240)
+  EdragYear     String? @db.NVarChar(250)
+  adedMkawenat  String? @db.NVarChar(250)
+  TakhtetNumber String? @db.NVarChar(250)
+  TakhtetData   String? @db.NVarChar(50)
+  MaleaNumber   String? @db.NVarChar(250)
+  MaleaDate     String? @db.NVarChar(50)
+  notes         String? @db.NVarChar(2250)
+  currentKulfa  String? @db.NVarChar(50)
+}
