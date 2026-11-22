@@ -397,11 +397,11 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
+  project_tab: 'project_tab',
   makwenat_tab: 'makwenat_tab',
   motabaa_fanya_tab: 'motabaa_fanya_tab',
   motabaa_Maly_tab: 'motabaa_Maly_tab',
-  motabaa_Qanwny_tab: 'motabaa_Qanwny_tab',
-  project_tab: 'project_tab'
+  motabaa_Qanwny_tab: 'motabaa_Qanwny_tab'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -417,10 +417,76 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "makwenat_tab" | "motabaa_fanya_tab" | "motabaa_Maly_tab" | "motabaa_Qanwny_tab" | "project_tab"
+    modelProps: "project_tab" | "makwenat_tab" | "motabaa_fanya_tab" | "motabaa_Maly_tab" | "motabaa_Qanwny_tab"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
+    project_tab: {
+      payload: Prisma.$project_tabPayload<ExtArgs>
+      fields: Prisma.project_tabFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.project_tabFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.project_tabFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>
+        }
+        findFirst: {
+          args: Prisma.project_tabFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.project_tabFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>
+        }
+        findMany: {
+          args: Prisma.project_tabFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>[]
+        }
+        create: {
+          args: Prisma.project_tabCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>
+        }
+        createMany: {
+          args: Prisma.project_tabCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.project_tabDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>
+        }
+        update: {
+          args: Prisma.project_tabUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>
+        }
+        deleteMany: {
+          args: Prisma.project_tabDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.project_tabUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.project_tabUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>
+        }
+        aggregate: {
+          args: Prisma.Project_tabAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateProject_tab>
+        }
+        groupBy: {
+          args: Prisma.project_tabGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Project_tabGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.project_tabCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Project_tabCountAggregateOutputType> | number
+        }
+      }
+    }
     makwenat_tab: {
       payload: Prisma.$makwenat_tabPayload<ExtArgs>
       fields: Prisma.makwenat_tabFieldRefs
@@ -685,72 +751,6 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    project_tab: {
-      payload: Prisma.$project_tabPayload<ExtArgs>
-      fields: Prisma.project_tabFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.project_tabFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.project_tabFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>
-        }
-        findFirst: {
-          args: Prisma.project_tabFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.project_tabFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>
-        }
-        findMany: {
-          args: Prisma.project_tabFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>[]
-        }
-        create: {
-          args: Prisma.project_tabCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>
-        }
-        createMany: {
-          args: Prisma.project_tabCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.project_tabDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>
-        }
-        update: {
-          args: Prisma.project_tabUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>
-        }
-        deleteMany: {
-          args: Prisma.project_tabDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.project_tabUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.project_tabUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$project_tabPayload>
-        }
-        aggregate: {
-          args: Prisma.Project_tabAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateProject_tab>
-        }
-        groupBy: {
-          args: Prisma.project_tabGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.Project_tabGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.project_tabCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.Project_tabCountAggregateOutputType> | number
-        }
-      }
-    }
   }
 } & {
   other: {
@@ -789,6 +789,31 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 } as const)
 
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
+
+
+export const Project_tabScalarFieldEnum = {
+  proID: 'proID',
+  Estethmar: 'Estethmar',
+  Bab: 'Bab',
+  Keshem: 'Keshem',
+  Qataa: 'Qataa',
+  Mada: 'Mada',
+  Nawaa: 'Nawaa',
+  Tasalsl: 'Tasalsl',
+  proname: 'proname',
+  KalfaEdrag: 'KalfaEdrag',
+  Jehamostafed: 'Jehamostafed',
+  EdragYear: 'EdragYear',
+  adedMkawenat: 'adedMkawenat',
+  TakhtetNumber: 'TakhtetNumber',
+  TakhtetData: 'TakhtetData',
+  MaleaNumber: 'MaleaNumber',
+  MaleaDate: 'MaleaDate',
+  notes: 'notes',
+  currentKulfa: 'currentKulfa'
+} as const
+
+export type Project_tabScalarFieldEnum = (typeof Project_tabScalarFieldEnum)[keyof typeof Project_tabScalarFieldEnum]
 
 
 export const Makwenat_tabScalarFieldEnum = {
@@ -858,31 +883,6 @@ export const Motabaa_Qanwny_tabScalarFieldEnum = {
 } as const
 
 export type Motabaa_Qanwny_tabScalarFieldEnum = (typeof Motabaa_Qanwny_tabScalarFieldEnum)[keyof typeof Motabaa_Qanwny_tabScalarFieldEnum]
-
-
-export const Project_tabScalarFieldEnum = {
-  proID: 'proID',
-  Estethmar: 'Estethmar',
-  Bab: 'Bab',
-  Keshem: 'Keshem',
-  Qataa: 'Qataa',
-  Mada: 'Mada',
-  Nawaa: 'Nawaa',
-  Tasalsl: 'Tasalsl',
-  proname: 'proname',
-  KalfaEdrag: 'KalfaEdrag',
-  Jehamostafed: 'Jehamostafed',
-  EdragYear: 'EdragYear',
-  adedMkawenat: 'adedMkawenat',
-  TakhtetNumber: 'TakhtetNumber',
-  TakhtetData: 'TakhtetData',
-  MaleaNumber: 'MaleaNumber',
-  MaleaDate: 'MaleaDate',
-  notes: 'notes',
-  currentKulfa: 'currentKulfa'
-} as const
-
-export type Project_tabScalarFieldEnum = (typeof Project_tabScalarFieldEnum)[keyof typeof Project_tabScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1085,11 +1085,11 @@ export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions 
  */
 export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter
 export type GlobalOmitConfig = {
+  project_tab?: Prisma.project_tabOmit
   makwenat_tab?: Prisma.makwenat_tabOmit
   motabaa_fanya_tab?: Prisma.motabaa_fanya_tabOmit
   motabaa_Maly_tab?: Prisma.motabaa_Maly_tabOmit
   motabaa_Qanwny_tab?: Prisma.motabaa_Qanwny_tabOmit
-  project_tab?: Prisma.project_tabOmit
 }
 
 /* Types for Logging */

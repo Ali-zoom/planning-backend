@@ -18,6 +18,11 @@ export { Prisma }
 export * as $Enums from './enums.js'
 export * from './enums.js';
 /**
+ * Model project_tab
+ * 
+ */
+export type project_tab = Prisma.project_tabModel
+/**
  * Model makwenat_tab
  * 
  */
@@ -37,8 +42,3 @@ export type motabaa_Maly_tab = Prisma.motabaa_Maly_tabModel
  * 
  */
 export type motabaa_Qanwny_tab = Prisma.motabaa_Qanwny_tabModel
-/**
- * Model project_tab
- * 
- */
-export type project_tab = Prisma.project_tabModel

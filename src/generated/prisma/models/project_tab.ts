@@ -328,6 +328,7 @@ export type project_tabWhereInput = {
   MaleaDate?: Prisma.StringNullableFilter<"project_tab"> | string | null
   notes?: Prisma.StringNullableFilter<"project_tab"> | string | null
   currentKulfa?: Prisma.StringNullableFilter<"project_tab"> | string | null
+  makwenat?: Prisma.Makwenat_tabListRelationFilter
 }
 
 export type project_tabOrderByWithRelationInput = {
@@ -350,6 +351,7 @@ export type project_tabOrderByWithRelationInput = {
   MaleaDate?: Prisma.SortOrderInput | Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
   currentKulfa?: Prisma.SortOrderInput | Prisma.SortOrder
+  makwenat?: Prisma.makwenat_tabOrderByRelationAggregateInput
 }
 
 export type project_tabWhereUniqueInput = Prisma.AtLeast<{
@@ -375,6 +377,7 @@ export type project_tabWhereUniqueInput = Prisma.AtLeast<{
   MaleaDate?: Prisma.StringNullableFilter<"project_tab"> | string | null
   notes?: Prisma.StringNullableFilter<"project_tab"> | string | null
   currentKulfa?: Prisma.StringNullableFilter<"project_tab"> | string | null
+  makwenat?: Prisma.Makwenat_tabListRelationFilter
 }, "proID">
 
 export type project_tabOrderByWithAggregationInput = {
@@ -448,6 +451,7 @@ export type project_tabCreateInput = {
   MaleaDate?: string | null
   notes?: string | null
   currentKulfa?: string | null
+  makwenat?: Prisma.makwenat_tabCreateNestedManyWithoutProjectsInput
 }
 
 export type project_tabUncheckedCreateInput = {
@@ -470,6 +474,7 @@ export type project_tabUncheckedCreateInput = {
   MaleaDate?: string | null
   notes?: string | null
   currentKulfa?: string | null
+  makwenat?: Prisma.makwenat_tabUncheckedCreateNestedManyWithoutProjectsInput
 }
 
 export type project_tabUpdateInput = {
@@ -491,6 +496,7 @@ export type project_tabUpdateInput = {
   MaleaDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   currentKulfa?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  makwenat?: Prisma.makwenat_tabUpdateManyWithoutProjectsNestedInput
 }
 
 export type project_tabUncheckedUpdateInput = {
@@ -513,6 +519,7 @@ export type project_tabUncheckedUpdateInput = {
   MaleaDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   currentKulfa?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  makwenat?: Prisma.makwenat_tabUncheckedUpdateManyWithoutProjectsNestedInput
 }
 
 export type project_tabCreateManyInput = {
@@ -653,6 +660,168 @@ export type project_tabSumOrderByAggregateInput = {
   proID?: Prisma.SortOrder
 }
 
+export type Project_tabScalarRelationFilter = {
+  is?: Prisma.project_tabWhereInput
+  isNot?: Prisma.project_tabWhereInput
+}
+
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
+}
+
+export type IntFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
+export type project_tabCreateNestedOneWithoutMakwenatInput = {
+  create?: Prisma.XOR<Prisma.project_tabCreateWithoutMakwenatInput, Prisma.project_tabUncheckedCreateWithoutMakwenatInput>
+  connectOrCreate?: Prisma.project_tabCreateOrConnectWithoutMakwenatInput
+  connect?: Prisma.project_tabWhereUniqueInput
+}
+
+export type project_tabUpdateOneRequiredWithoutMakwenatNestedInput = {
+  create?: Prisma.XOR<Prisma.project_tabCreateWithoutMakwenatInput, Prisma.project_tabUncheckedCreateWithoutMakwenatInput>
+  connectOrCreate?: Prisma.project_tabCreateOrConnectWithoutMakwenatInput
+  upsert?: Prisma.project_tabUpsertWithoutMakwenatInput
+  connect?: Prisma.project_tabWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.project_tabUpdateToOneWithWhereWithoutMakwenatInput, Prisma.project_tabUpdateWithoutMakwenatInput>, Prisma.project_tabUncheckedUpdateWithoutMakwenatInput>
+}
+
+export type project_tabCreateWithoutMakwenatInput = {
+  Estethmar?: string | null
+  Bab?: string | null
+  Keshem?: string | null
+  Qataa?: string | null
+  Mada?: string | null
+  Nawaa?: string | null
+  Tasalsl?: string | null
+  proname?: string | null
+  KalfaEdrag?: string | null
+  Jehamostafed?: string | null
+  EdragYear?: string | null
+  adedMkawenat?: string | null
+  TakhtetNumber?: string | null
+  TakhtetData?: string | null
+  MaleaNumber?: string | null
+  MaleaDate?: string | null
+  notes?: string | null
+  currentKulfa?: string | null
+}
+
+export type project_tabUncheckedCreateWithoutMakwenatInput = {
+  proID?: number
+  Estethmar?: string | null
+  Bab?: string | null
+  Keshem?: string | null
+  Qataa?: string | null
+  Mada?: string | null
+  Nawaa?: string | null
+  Tasalsl?: string | null
+  proname?: string | null
+  KalfaEdrag?: string | null
+  Jehamostafed?: string | null
+  EdragYear?: string | null
+  adedMkawenat?: string | null
+  TakhtetNumber?: string | null
+  TakhtetData?: string | null
+  MaleaNumber?: string | null
+  MaleaDate?: string | null
+  notes?: string | null
+  currentKulfa?: string | null
+}
+
+export type project_tabCreateOrConnectWithoutMakwenatInput = {
+  where: Prisma.project_tabWhereUniqueInput
+  create: Prisma.XOR<Prisma.project_tabCreateWithoutMakwenatInput, Prisma.project_tabUncheckedCreateWithoutMakwenatInput>
+}
+
+export type project_tabUpsertWithoutMakwenatInput = {
+  update: Prisma.XOR<Prisma.project_tabUpdateWithoutMakwenatInput, Prisma.project_tabUncheckedUpdateWithoutMakwenatInput>
+  create: Prisma.XOR<Prisma.project_tabCreateWithoutMakwenatInput, Prisma.project_tabUncheckedCreateWithoutMakwenatInput>
+  where?: Prisma.project_tabWhereInput
+}
+
+export type project_tabUpdateToOneWithWhereWithoutMakwenatInput = {
+  where?: Prisma.project_tabWhereInput
+  data: Prisma.XOR<Prisma.project_tabUpdateWithoutMakwenatInput, Prisma.project_tabUncheckedUpdateWithoutMakwenatInput>
+}
+
+export type project_tabUpdateWithoutMakwenatInput = {
+  Estethmar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Bab?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Keshem?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Qataa?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Mada?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Nawaa?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Tasalsl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  proname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  KalfaEdrag?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Jehamostafed?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  EdragYear?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adedMkawenat?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  TakhtetNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  TakhtetData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  MaleaNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  MaleaDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentKulfa?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type project_tabUncheckedUpdateWithoutMakwenatInput = {
+  proID?: Prisma.IntFieldUpdateOperationsInput | number
+  Estethmar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Bab?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Keshem?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Qataa?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Mada?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Nawaa?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Tasalsl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  proname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  KalfaEdrag?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Jehamostafed?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  EdragYear?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  adedMkawenat?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  TakhtetNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  TakhtetData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  MaleaNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  MaleaDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currentKulfa?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+
+/**
+ * Count Type Project_tabCountOutputType
+ */
+
+export type Project_tabCountOutputType = {
+  makwenat: number
+}
+
+export type Project_tabCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  makwenat?: boolean | Project_tabCountOutputTypeCountMakwenatArgs
+}
+
+/**
+ * Project_tabCountOutputType without action
+ */
+export type Project_tabCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Project_tabCountOutputType
+   */
+  select?: Prisma.Project_tabCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * Project_tabCountOutputType without action
+ */
+export type Project_tabCountOutputTypeCountMakwenatArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.makwenat_tabWhereInput
+}
 
 
 export type project_tabSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -675,6 +844,8 @@ export type project_tabSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   MaleaDate?: boolean
   notes?: boolean
   currentKulfa?: boolean
+  makwenat?: boolean | Prisma.project_tab$makwenatArgs<ExtArgs>
+  _count?: boolean | Prisma.Project_tabCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["project_tab"]>
 
 
@@ -702,10 +873,16 @@ export type project_tabSelectScalar = {
 }
 
 export type project_tabOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"proID" | "Estethmar" | "Bab" | "Keshem" | "Qataa" | "Mada" | "Nawaa" | "Tasalsl" | "proname" | "KalfaEdrag" | "Jehamostafed" | "EdragYear" | "adedMkawenat" | "TakhtetNumber" | "TakhtetData" | "MaleaNumber" | "MaleaDate" | "notes" | "currentKulfa", ExtArgs["result"]["project_tab"]>
+export type project_tabInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  makwenat?: boolean | Prisma.project_tab$makwenatArgs<ExtArgs>
+  _count?: boolean | Prisma.Project_tabCountOutputTypeDefaultArgs<ExtArgs>
+}
 
 export type $project_tabPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "project_tab"
-  objects: {}
+  objects: {
+    makwenat: Prisma.$makwenat_tabPayload<ExtArgs>[]
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     proID: number
     Estethmar: string | null
@@ -1066,6 +1243,7 @@ readonly fields: project_tabFieldRefs;
  */
 export interface Prisma__project_tabClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  makwenat<T extends Prisma.project_tab$makwenatArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.project_tab$makwenatArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$makwenat_tabPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1131,6 +1309,10 @@ export type project_tabFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.I
    */
   omit?: Prisma.project_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.project_tabInclude<ExtArgs> | null
+  /**
    * Filter, which project_tab to fetch.
    */
   where: Prisma.project_tabWhereUniqueInput
@@ -1149,6 +1331,10 @@ export type project_tabFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Exten
    */
   omit?: Prisma.project_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.project_tabInclude<ExtArgs> | null
+  /**
    * Filter, which project_tab to fetch.
    */
   where: Prisma.project_tabWhereUniqueInput
@@ -1166,6 +1352,10 @@ export type project_tabFindFirstArgs<ExtArgs extends runtime.Types.Extensions.In
    * Omit specific fields from the project_tab
    */
   omit?: Prisma.project_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.project_tabInclude<ExtArgs> | null
   /**
    * Filter, which project_tab to fetch.
    */
@@ -1215,6 +1405,10 @@ export type project_tabFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extens
    */
   omit?: Prisma.project_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.project_tabInclude<ExtArgs> | null
+  /**
    * Filter, which project_tab to fetch.
    */
   where?: Prisma.project_tabWhereInput
@@ -1262,6 +1456,10 @@ export type project_tabFindManyArgs<ExtArgs extends runtime.Types.Extensions.Int
    * Omit specific fields from the project_tab
    */
   omit?: Prisma.project_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.project_tabInclude<ExtArgs> | null
   /**
    * Filter, which project_tabs to fetch.
    */
@@ -1311,6 +1509,10 @@ export type project_tabCreateArgs<ExtArgs extends runtime.Types.Extensions.Inter
    */
   omit?: Prisma.project_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.project_tabInclude<ExtArgs> | null
+  /**
    * The data needed to create a project_tab.
    */
   data?: Prisma.XOR<Prisma.project_tabCreateInput, Prisma.project_tabUncheckedCreateInput>
@@ -1338,6 +1540,10 @@ export type project_tabUpdateArgs<ExtArgs extends runtime.Types.Extensions.Inter
    * Omit specific fields from the project_tab
    */
   omit?: Prisma.project_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.project_tabInclude<ExtArgs> | null
   /**
    * The data needed to update a project_tab.
    */
@@ -1379,6 +1585,10 @@ export type project_tabUpsertArgs<ExtArgs extends runtime.Types.Extensions.Inter
    */
   omit?: Prisma.project_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.project_tabInclude<ExtArgs> | null
+  /**
    * The filter to search for the project_tab to update in case it exists.
    */
   where: Prisma.project_tabWhereUniqueInput
@@ -1405,6 +1615,10 @@ export type project_tabDeleteArgs<ExtArgs extends runtime.Types.Extensions.Inter
    */
   omit?: Prisma.project_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.project_tabInclude<ExtArgs> | null
+  /**
    * Filter which project_tab to delete.
    */
   where: Prisma.project_tabWhereUniqueInput
@@ -1425,6 +1639,30 @@ export type project_tabDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.I
 }
 
 /**
+ * project_tab.makwenat
+ */
+export type project_tab$makwenatArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the makwenat_tab
+   */
+  select?: Prisma.makwenat_tabSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the makwenat_tab
+   */
+  omit?: Prisma.makwenat_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.makwenat_tabInclude<ExtArgs> | null
+  where?: Prisma.makwenat_tabWhereInput
+  orderBy?: Prisma.makwenat_tabOrderByWithRelationInput | Prisma.makwenat_tabOrderByWithRelationInput[]
+  cursor?: Prisma.makwenat_tabWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.Makwenat_tabScalarFieldEnum | Prisma.Makwenat_tabScalarFieldEnum[]
+}
+
+/**
  * project_tab without action
  */
 export type project_tabDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1436,4 +1674,8 @@ export type project_tabDefaultArgs<ExtArgs extends runtime.Types.Extensions.Inte
    * Omit specific fields from the project_tab
    */
   omit?: Prisma.project_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.project_tabInclude<ExtArgs> | null
 }

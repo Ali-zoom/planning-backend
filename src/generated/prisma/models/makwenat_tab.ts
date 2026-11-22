@@ -251,7 +251,7 @@ export type makwenat_tabGroupByArgs<ExtArgs extends runtime.Types.Extensions.Int
 
 export type Makwenat_tabGroupByOutputType = {
   mukwenID: number
-  projectID: number | null
+  projectID: number
   mukwenName: string | null
   KulfaTotal: string | null
   txtehala: string | null
@@ -293,7 +293,7 @@ export type makwenat_tabWhereInput = {
   OR?: Prisma.makwenat_tabWhereInput[]
   NOT?: Prisma.makwenat_tabWhereInput | Prisma.makwenat_tabWhereInput[]
   mukwenID?: Prisma.IntFilter<"makwenat_tab"> | number
-  projectID?: Prisma.IntNullableFilter<"makwenat_tab"> | number | null
+  projectID?: Prisma.IntFilter<"makwenat_tab"> | number
   mukwenName?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
   KulfaTotal?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
   txtehala?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
@@ -308,11 +308,15 @@ export type makwenat_tabWhereInput = {
   txtMokemName?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
   txtMobile?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
   imageData?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  projects?: Prisma.XOR<Prisma.Project_tabScalarRelationFilter, Prisma.project_tabWhereInput>
+  motabaa_fanya?: Prisma.Motabaa_fanya_tabListRelationFilter
+  motabaa_Maly?: Prisma.Motabaa_Maly_tabListRelationFilter
+  motabaa_Qanwn?: Prisma.Motabaa_Qanwny_tabListRelationFilter
 }
 
 export type makwenat_tabOrderByWithRelationInput = {
   mukwenID?: Prisma.SortOrder
-  projectID?: Prisma.SortOrderInput | Prisma.SortOrder
+  projectID?: Prisma.SortOrder
   mukwenName?: Prisma.SortOrderInput | Prisma.SortOrder
   KulfaTotal?: Prisma.SortOrderInput | Prisma.SortOrder
   txtehala?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -327,6 +331,10 @@ export type makwenat_tabOrderByWithRelationInput = {
   txtMokemName?: Prisma.SortOrderInput | Prisma.SortOrder
   txtMobile?: Prisma.SortOrderInput | Prisma.SortOrder
   imageData?: Prisma.SortOrderInput | Prisma.SortOrder
+  projects?: Prisma.project_tabOrderByWithRelationInput
+  motabaa_fanya?: Prisma.motabaa_fanya_tabOrderByRelationAggregateInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabOrderByRelationAggregateInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabOrderByRelationAggregateInput
 }
 
 export type makwenat_tabWhereUniqueInput = Prisma.AtLeast<{
@@ -334,7 +342,7 @@ export type makwenat_tabWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.makwenat_tabWhereInput | Prisma.makwenat_tabWhereInput[]
   OR?: Prisma.makwenat_tabWhereInput[]
   NOT?: Prisma.makwenat_tabWhereInput | Prisma.makwenat_tabWhereInput[]
-  projectID?: Prisma.IntNullableFilter<"makwenat_tab"> | number | null
+  projectID?: Prisma.IntFilter<"makwenat_tab"> | number
   mukwenName?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
   KulfaTotal?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
   txtehala?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
@@ -349,11 +357,15 @@ export type makwenat_tabWhereUniqueInput = Prisma.AtLeast<{
   txtMokemName?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
   txtMobile?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
   imageData?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  projects?: Prisma.XOR<Prisma.Project_tabScalarRelationFilter, Prisma.project_tabWhereInput>
+  motabaa_fanya?: Prisma.Motabaa_fanya_tabListRelationFilter
+  motabaa_Maly?: Prisma.Motabaa_Maly_tabListRelationFilter
+  motabaa_Qanwn?: Prisma.Motabaa_Qanwny_tabListRelationFilter
 }, "mukwenID">
 
 export type makwenat_tabOrderByWithAggregationInput = {
   mukwenID?: Prisma.SortOrder
-  projectID?: Prisma.SortOrderInput | Prisma.SortOrder
+  projectID?: Prisma.SortOrder
   mukwenName?: Prisma.SortOrderInput | Prisma.SortOrder
   KulfaTotal?: Prisma.SortOrderInput | Prisma.SortOrder
   txtehala?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -380,7 +392,7 @@ export type makwenat_tabScalarWhereWithAggregatesInput = {
   OR?: Prisma.makwenat_tabScalarWhereWithAggregatesInput[]
   NOT?: Prisma.makwenat_tabScalarWhereWithAggregatesInput | Prisma.makwenat_tabScalarWhereWithAggregatesInput[]
   mukwenID?: Prisma.IntWithAggregatesFilter<"makwenat_tab"> | number
-  projectID?: Prisma.IntNullableWithAggregatesFilter<"makwenat_tab"> | number | null
+  projectID?: Prisma.IntWithAggregatesFilter<"makwenat_tab"> | number
   mukwenName?: Prisma.StringNullableWithAggregatesFilter<"makwenat_tab"> | string | null
   KulfaTotal?: Prisma.StringNullableWithAggregatesFilter<"makwenat_tab"> | string | null
   txtehala?: Prisma.StringNullableWithAggregatesFilter<"makwenat_tab"> | string | null
@@ -398,7 +410,6 @@ export type makwenat_tabScalarWhereWithAggregatesInput = {
 }
 
 export type makwenat_tabCreateInput = {
-  projectID?: number | null
   mukwenName?: string | null
   KulfaTotal?: string | null
   txtehala?: string | null
@@ -413,11 +424,15 @@ export type makwenat_tabCreateInput = {
   txtMokemName?: string | null
   txtMobile?: string | null
   imageData?: string | null
+  projects: Prisma.project_tabCreateNestedOneWithoutMakwenatInput
+  motabaa_fanya?: Prisma.motabaa_fanya_tabCreateNestedManyWithoutMokawenatInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabCreateNestedManyWithoutMokawenatInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabCreateNestedManyWithoutMokawenatInput
 }
 
 export type makwenat_tabUncheckedCreateInput = {
   mukwenID?: number
-  projectID?: number | null
+  projectID: number
   mukwenName?: string | null
   KulfaTotal?: string | null
   txtehala?: string | null
@@ -432,10 +447,12 @@ export type makwenat_tabUncheckedCreateInput = {
   txtMokemName?: string | null
   txtMobile?: string | null
   imageData?: string | null
+  motabaa_fanya?: Prisma.motabaa_fanya_tabUncheckedCreateNestedManyWithoutMokawenatInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabUncheckedCreateNestedManyWithoutMokawenatInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabUncheckedCreateNestedManyWithoutMokawenatInput
 }
 
 export type makwenat_tabUpdateInput = {
-  projectID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -450,11 +467,15 @@ export type makwenat_tabUpdateInput = {
   txtMokemName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   txtMobile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   imageData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  projects?: Prisma.project_tabUpdateOneRequiredWithoutMakwenatNestedInput
+  motabaa_fanya?: Prisma.motabaa_fanya_tabUpdateManyWithoutMokawenatNestedInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabUpdateManyWithoutMokawenatNestedInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabUpdateManyWithoutMokawenatNestedInput
 }
 
 export type makwenat_tabUncheckedUpdateInput = {
   mukwenID?: Prisma.IntFieldUpdateOperationsInput | number
-  projectID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  projectID?: Prisma.IntFieldUpdateOperationsInput | number
   mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -469,10 +490,13 @@ export type makwenat_tabUncheckedUpdateInput = {
   txtMokemName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   txtMobile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   imageData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  motabaa_fanya?: Prisma.motabaa_fanya_tabUncheckedUpdateManyWithoutMokawenatNestedInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabUncheckedUpdateManyWithoutMokawenatNestedInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabUncheckedUpdateManyWithoutMokawenatNestedInput
 }
 
 export type makwenat_tabCreateManyInput = {
-  projectID?: number | null
+  projectID: number
   mukwenName?: string | null
   KulfaTotal?: string | null
   txtehala?: string | null
@@ -490,7 +514,6 @@ export type makwenat_tabCreateManyInput = {
 }
 
 export type makwenat_tabUpdateManyMutationInput = {
-  projectID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -509,7 +532,7 @@ export type makwenat_tabUpdateManyMutationInput = {
 
 export type makwenat_tabUncheckedUpdateManyInput = {
   mukwenID?: Prisma.IntFieldUpdateOperationsInput | number
-  projectID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  projectID?: Prisma.IntFieldUpdateOperationsInput | number
   mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -524,6 +547,16 @@ export type makwenat_tabUncheckedUpdateManyInput = {
   txtMokemName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   txtMobile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   imageData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type Makwenat_tabListRelationFilter = {
+  every?: Prisma.makwenat_tabWhereInput
+  some?: Prisma.makwenat_tabWhereInput
+  none?: Prisma.makwenat_tabWhereInput
+}
+
+export type makwenat_tabOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
 }
 
 export type makwenat_tabCountOrderByAggregateInput = {
@@ -593,26 +626,600 @@ export type makwenat_tabSumOrderByAggregateInput = {
   projectID?: Prisma.SortOrder
 }
 
-export type NullableIntFieldUpdateOperationsInput = {
-  set?: number | null
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
+export type Makwenat_tabScalarRelationFilter = {
+  is?: Prisma.makwenat_tabWhereInput
+  isNot?: Prisma.makwenat_tabWhereInput
 }
 
-export type NullableStringFieldUpdateOperationsInput = {
-  set?: string | null
+export type makwenat_tabCreateNestedManyWithoutProjectsInput = {
+  create?: Prisma.XOR<Prisma.makwenat_tabCreateWithoutProjectsInput, Prisma.makwenat_tabUncheckedCreateWithoutProjectsInput> | Prisma.makwenat_tabCreateWithoutProjectsInput[] | Prisma.makwenat_tabUncheckedCreateWithoutProjectsInput[]
+  connectOrCreate?: Prisma.makwenat_tabCreateOrConnectWithoutProjectsInput | Prisma.makwenat_tabCreateOrConnectWithoutProjectsInput[]
+  createMany?: Prisma.makwenat_tabCreateManyProjectsInputEnvelope
+  connect?: Prisma.makwenat_tabWhereUniqueInput | Prisma.makwenat_tabWhereUniqueInput[]
 }
 
-export type IntFieldUpdateOperationsInput = {
-  set?: number
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
+export type makwenat_tabUncheckedCreateNestedManyWithoutProjectsInput = {
+  create?: Prisma.XOR<Prisma.makwenat_tabCreateWithoutProjectsInput, Prisma.makwenat_tabUncheckedCreateWithoutProjectsInput> | Prisma.makwenat_tabCreateWithoutProjectsInput[] | Prisma.makwenat_tabUncheckedCreateWithoutProjectsInput[]
+  connectOrCreate?: Prisma.makwenat_tabCreateOrConnectWithoutProjectsInput | Prisma.makwenat_tabCreateOrConnectWithoutProjectsInput[]
+  createMany?: Prisma.makwenat_tabCreateManyProjectsInputEnvelope
+  connect?: Prisma.makwenat_tabWhereUniqueInput | Prisma.makwenat_tabWhereUniqueInput[]
 }
 
+export type makwenat_tabUpdateManyWithoutProjectsNestedInput = {
+  create?: Prisma.XOR<Prisma.makwenat_tabCreateWithoutProjectsInput, Prisma.makwenat_tabUncheckedCreateWithoutProjectsInput> | Prisma.makwenat_tabCreateWithoutProjectsInput[] | Prisma.makwenat_tabUncheckedCreateWithoutProjectsInput[]
+  connectOrCreate?: Prisma.makwenat_tabCreateOrConnectWithoutProjectsInput | Prisma.makwenat_tabCreateOrConnectWithoutProjectsInput[]
+  upsert?: Prisma.makwenat_tabUpsertWithWhereUniqueWithoutProjectsInput | Prisma.makwenat_tabUpsertWithWhereUniqueWithoutProjectsInput[]
+  createMany?: Prisma.makwenat_tabCreateManyProjectsInputEnvelope
+  set?: Prisma.makwenat_tabWhereUniqueInput | Prisma.makwenat_tabWhereUniqueInput[]
+  disconnect?: Prisma.makwenat_tabWhereUniqueInput | Prisma.makwenat_tabWhereUniqueInput[]
+  delete?: Prisma.makwenat_tabWhereUniqueInput | Prisma.makwenat_tabWhereUniqueInput[]
+  connect?: Prisma.makwenat_tabWhereUniqueInput | Prisma.makwenat_tabWhereUniqueInput[]
+  update?: Prisma.makwenat_tabUpdateWithWhereUniqueWithoutProjectsInput | Prisma.makwenat_tabUpdateWithWhereUniqueWithoutProjectsInput[]
+  updateMany?: Prisma.makwenat_tabUpdateManyWithWhereWithoutProjectsInput | Prisma.makwenat_tabUpdateManyWithWhereWithoutProjectsInput[]
+  deleteMany?: Prisma.makwenat_tabScalarWhereInput | Prisma.makwenat_tabScalarWhereInput[]
+}
+
+export type makwenat_tabUncheckedUpdateManyWithoutProjectsNestedInput = {
+  create?: Prisma.XOR<Prisma.makwenat_tabCreateWithoutProjectsInput, Prisma.makwenat_tabUncheckedCreateWithoutProjectsInput> | Prisma.makwenat_tabCreateWithoutProjectsInput[] | Prisma.makwenat_tabUncheckedCreateWithoutProjectsInput[]
+  connectOrCreate?: Prisma.makwenat_tabCreateOrConnectWithoutProjectsInput | Prisma.makwenat_tabCreateOrConnectWithoutProjectsInput[]
+  upsert?: Prisma.makwenat_tabUpsertWithWhereUniqueWithoutProjectsInput | Prisma.makwenat_tabUpsertWithWhereUniqueWithoutProjectsInput[]
+  createMany?: Prisma.makwenat_tabCreateManyProjectsInputEnvelope
+  set?: Prisma.makwenat_tabWhereUniqueInput | Prisma.makwenat_tabWhereUniqueInput[]
+  disconnect?: Prisma.makwenat_tabWhereUniqueInput | Prisma.makwenat_tabWhereUniqueInput[]
+  delete?: Prisma.makwenat_tabWhereUniqueInput | Prisma.makwenat_tabWhereUniqueInput[]
+  connect?: Prisma.makwenat_tabWhereUniqueInput | Prisma.makwenat_tabWhereUniqueInput[]
+  update?: Prisma.makwenat_tabUpdateWithWhereUniqueWithoutProjectsInput | Prisma.makwenat_tabUpdateWithWhereUniqueWithoutProjectsInput[]
+  updateMany?: Prisma.makwenat_tabUpdateManyWithWhereWithoutProjectsInput | Prisma.makwenat_tabUpdateManyWithWhereWithoutProjectsInput[]
+  deleteMany?: Prisma.makwenat_tabScalarWhereInput | Prisma.makwenat_tabScalarWhereInput[]
+}
+
+export type makwenat_tabCreateNestedOneWithoutMotabaa_fanyaInput = {
+  create?: Prisma.XOR<Prisma.makwenat_tabCreateWithoutMotabaa_fanyaInput, Prisma.makwenat_tabUncheckedCreateWithoutMotabaa_fanyaInput>
+  connectOrCreate?: Prisma.makwenat_tabCreateOrConnectWithoutMotabaa_fanyaInput
+  connect?: Prisma.makwenat_tabWhereUniqueInput
+}
+
+export type makwenat_tabUpdateOneRequiredWithoutMotabaa_fanyaNestedInput = {
+  create?: Prisma.XOR<Prisma.makwenat_tabCreateWithoutMotabaa_fanyaInput, Prisma.makwenat_tabUncheckedCreateWithoutMotabaa_fanyaInput>
+  connectOrCreate?: Prisma.makwenat_tabCreateOrConnectWithoutMotabaa_fanyaInput
+  upsert?: Prisma.makwenat_tabUpsertWithoutMotabaa_fanyaInput
+  connect?: Prisma.makwenat_tabWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.makwenat_tabUpdateToOneWithWhereWithoutMotabaa_fanyaInput, Prisma.makwenat_tabUpdateWithoutMotabaa_fanyaInput>, Prisma.makwenat_tabUncheckedUpdateWithoutMotabaa_fanyaInput>
+}
+
+export type makwenat_tabCreateNestedOneWithoutMotabaa_MalyInput = {
+  create?: Prisma.XOR<Prisma.makwenat_tabCreateWithoutMotabaa_MalyInput, Prisma.makwenat_tabUncheckedCreateWithoutMotabaa_MalyInput>
+  connectOrCreate?: Prisma.makwenat_tabCreateOrConnectWithoutMotabaa_MalyInput
+  connect?: Prisma.makwenat_tabWhereUniqueInput
+}
+
+export type makwenat_tabUpdateOneRequiredWithoutMotabaa_MalyNestedInput = {
+  create?: Prisma.XOR<Prisma.makwenat_tabCreateWithoutMotabaa_MalyInput, Prisma.makwenat_tabUncheckedCreateWithoutMotabaa_MalyInput>
+  connectOrCreate?: Prisma.makwenat_tabCreateOrConnectWithoutMotabaa_MalyInput
+  upsert?: Prisma.makwenat_tabUpsertWithoutMotabaa_MalyInput
+  connect?: Prisma.makwenat_tabWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.makwenat_tabUpdateToOneWithWhereWithoutMotabaa_MalyInput, Prisma.makwenat_tabUpdateWithoutMotabaa_MalyInput>, Prisma.makwenat_tabUncheckedUpdateWithoutMotabaa_MalyInput>
+}
+
+export type makwenat_tabCreateNestedOneWithoutMotabaa_QanwnInput = {
+  create?: Prisma.XOR<Prisma.makwenat_tabCreateWithoutMotabaa_QanwnInput, Prisma.makwenat_tabUncheckedCreateWithoutMotabaa_QanwnInput>
+  connectOrCreate?: Prisma.makwenat_tabCreateOrConnectWithoutMotabaa_QanwnInput
+  connect?: Prisma.makwenat_tabWhereUniqueInput
+}
+
+export type makwenat_tabUpdateOneRequiredWithoutMotabaa_QanwnNestedInput = {
+  create?: Prisma.XOR<Prisma.makwenat_tabCreateWithoutMotabaa_QanwnInput, Prisma.makwenat_tabUncheckedCreateWithoutMotabaa_QanwnInput>
+  connectOrCreate?: Prisma.makwenat_tabCreateOrConnectWithoutMotabaa_QanwnInput
+  upsert?: Prisma.makwenat_tabUpsertWithoutMotabaa_QanwnInput
+  connect?: Prisma.makwenat_tabWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.makwenat_tabUpdateToOneWithWhereWithoutMotabaa_QanwnInput, Prisma.makwenat_tabUpdateWithoutMotabaa_QanwnInput>, Prisma.makwenat_tabUncheckedUpdateWithoutMotabaa_QanwnInput>
+}
+
+export type makwenat_tabCreateWithoutProjectsInput = {
+  mukwenName?: string | null
+  KulfaTotal?: string | null
+  txtehala?: string | null
+  txtcompany?: string | null
+  txtakedNumber?: string | null
+  dtakedDate?: string | null
+  txtnotes?: string | null
+  muda?: string | null
+  txtLocation?: string | null
+  txtContractName?: string | null
+  txtMobashraDate?: string | null
+  txtMokemName?: string | null
+  txtMobile?: string | null
+  imageData?: string | null
+  motabaa_fanya?: Prisma.motabaa_fanya_tabCreateNestedManyWithoutMokawenatInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabCreateNestedManyWithoutMokawenatInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabCreateNestedManyWithoutMokawenatInput
+}
+
+export type makwenat_tabUncheckedCreateWithoutProjectsInput = {
+  mukwenID?: number
+  mukwenName?: string | null
+  KulfaTotal?: string | null
+  txtehala?: string | null
+  txtcompany?: string | null
+  txtakedNumber?: string | null
+  dtakedDate?: string | null
+  txtnotes?: string | null
+  muda?: string | null
+  txtLocation?: string | null
+  txtContractName?: string | null
+  txtMobashraDate?: string | null
+  txtMokemName?: string | null
+  txtMobile?: string | null
+  imageData?: string | null
+  motabaa_fanya?: Prisma.motabaa_fanya_tabUncheckedCreateNestedManyWithoutMokawenatInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabUncheckedCreateNestedManyWithoutMokawenatInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabUncheckedCreateNestedManyWithoutMokawenatInput
+}
+
+export type makwenat_tabCreateOrConnectWithoutProjectsInput = {
+  where: Prisma.makwenat_tabWhereUniqueInput
+  create: Prisma.XOR<Prisma.makwenat_tabCreateWithoutProjectsInput, Prisma.makwenat_tabUncheckedCreateWithoutProjectsInput>
+}
+
+export type makwenat_tabCreateManyProjectsInputEnvelope = {
+  data: Prisma.makwenat_tabCreateManyProjectsInput | Prisma.makwenat_tabCreateManyProjectsInput[]
+}
+
+export type makwenat_tabUpsertWithWhereUniqueWithoutProjectsInput = {
+  where: Prisma.makwenat_tabWhereUniqueInput
+  update: Prisma.XOR<Prisma.makwenat_tabUpdateWithoutProjectsInput, Prisma.makwenat_tabUncheckedUpdateWithoutProjectsInput>
+  create: Prisma.XOR<Prisma.makwenat_tabCreateWithoutProjectsInput, Prisma.makwenat_tabUncheckedCreateWithoutProjectsInput>
+}
+
+export type makwenat_tabUpdateWithWhereUniqueWithoutProjectsInput = {
+  where: Prisma.makwenat_tabWhereUniqueInput
+  data: Prisma.XOR<Prisma.makwenat_tabUpdateWithoutProjectsInput, Prisma.makwenat_tabUncheckedUpdateWithoutProjectsInput>
+}
+
+export type makwenat_tabUpdateManyWithWhereWithoutProjectsInput = {
+  where: Prisma.makwenat_tabScalarWhereInput
+  data: Prisma.XOR<Prisma.makwenat_tabUpdateManyMutationInput, Prisma.makwenat_tabUncheckedUpdateManyWithoutProjectsInput>
+}
+
+export type makwenat_tabScalarWhereInput = {
+  AND?: Prisma.makwenat_tabScalarWhereInput | Prisma.makwenat_tabScalarWhereInput[]
+  OR?: Prisma.makwenat_tabScalarWhereInput[]
+  NOT?: Prisma.makwenat_tabScalarWhereInput | Prisma.makwenat_tabScalarWhereInput[]
+  mukwenID?: Prisma.IntFilter<"makwenat_tab"> | number
+  projectID?: Prisma.IntFilter<"makwenat_tab"> | number
+  mukwenName?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  KulfaTotal?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  txtehala?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  txtcompany?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  txtakedNumber?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  dtakedDate?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  txtnotes?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  muda?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  txtLocation?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  txtContractName?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  txtMobashraDate?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  txtMokemName?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  txtMobile?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+  imageData?: Prisma.StringNullableFilter<"makwenat_tab"> | string | null
+}
+
+export type makwenat_tabCreateWithoutMotabaa_fanyaInput = {
+  mukwenName?: string | null
+  KulfaTotal?: string | null
+  txtehala?: string | null
+  txtcompany?: string | null
+  txtakedNumber?: string | null
+  dtakedDate?: string | null
+  txtnotes?: string | null
+  muda?: string | null
+  txtLocation?: string | null
+  txtContractName?: string | null
+  txtMobashraDate?: string | null
+  txtMokemName?: string | null
+  txtMobile?: string | null
+  imageData?: string | null
+  projects: Prisma.project_tabCreateNestedOneWithoutMakwenatInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabCreateNestedManyWithoutMokawenatInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabCreateNestedManyWithoutMokawenatInput
+}
+
+export type makwenat_tabUncheckedCreateWithoutMotabaa_fanyaInput = {
+  mukwenID?: number
+  projectID: number
+  mukwenName?: string | null
+  KulfaTotal?: string | null
+  txtehala?: string | null
+  txtcompany?: string | null
+  txtakedNumber?: string | null
+  dtakedDate?: string | null
+  txtnotes?: string | null
+  muda?: string | null
+  txtLocation?: string | null
+  txtContractName?: string | null
+  txtMobashraDate?: string | null
+  txtMokemName?: string | null
+  txtMobile?: string | null
+  imageData?: string | null
+  motabaa_Maly?: Prisma.motabaa_Maly_tabUncheckedCreateNestedManyWithoutMokawenatInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabUncheckedCreateNestedManyWithoutMokawenatInput
+}
+
+export type makwenat_tabCreateOrConnectWithoutMotabaa_fanyaInput = {
+  where: Prisma.makwenat_tabWhereUniqueInput
+  create: Prisma.XOR<Prisma.makwenat_tabCreateWithoutMotabaa_fanyaInput, Prisma.makwenat_tabUncheckedCreateWithoutMotabaa_fanyaInput>
+}
+
+export type makwenat_tabUpsertWithoutMotabaa_fanyaInput = {
+  update: Prisma.XOR<Prisma.makwenat_tabUpdateWithoutMotabaa_fanyaInput, Prisma.makwenat_tabUncheckedUpdateWithoutMotabaa_fanyaInput>
+  create: Prisma.XOR<Prisma.makwenat_tabCreateWithoutMotabaa_fanyaInput, Prisma.makwenat_tabUncheckedCreateWithoutMotabaa_fanyaInput>
+  where?: Prisma.makwenat_tabWhereInput
+}
+
+export type makwenat_tabUpdateToOneWithWhereWithoutMotabaa_fanyaInput = {
+  where?: Prisma.makwenat_tabWhereInput
+  data: Prisma.XOR<Prisma.makwenat_tabUpdateWithoutMotabaa_fanyaInput, Prisma.makwenat_tabUncheckedUpdateWithoutMotabaa_fanyaInput>
+}
+
+export type makwenat_tabUpdateWithoutMotabaa_fanyaInput = {
+  mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtcompany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtakedNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dtakedDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtnotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  muda?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtLocation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtContractName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobashraDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMokemName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  imageData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  projects?: Prisma.project_tabUpdateOneRequiredWithoutMakwenatNestedInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabUpdateManyWithoutMokawenatNestedInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabUpdateManyWithoutMokawenatNestedInput
+}
+
+export type makwenat_tabUncheckedUpdateWithoutMotabaa_fanyaInput = {
+  mukwenID?: Prisma.IntFieldUpdateOperationsInput | number
+  projectID?: Prisma.IntFieldUpdateOperationsInput | number
+  mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtcompany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtakedNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dtakedDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtnotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  muda?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtLocation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtContractName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobashraDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMokemName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  imageData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  motabaa_Maly?: Prisma.motabaa_Maly_tabUncheckedUpdateManyWithoutMokawenatNestedInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabUncheckedUpdateManyWithoutMokawenatNestedInput
+}
+
+export type makwenat_tabCreateWithoutMotabaa_MalyInput = {
+  mukwenName?: string | null
+  KulfaTotal?: string | null
+  txtehala?: string | null
+  txtcompany?: string | null
+  txtakedNumber?: string | null
+  dtakedDate?: string | null
+  txtnotes?: string | null
+  muda?: string | null
+  txtLocation?: string | null
+  txtContractName?: string | null
+  txtMobashraDate?: string | null
+  txtMokemName?: string | null
+  txtMobile?: string | null
+  imageData?: string | null
+  projects: Prisma.project_tabCreateNestedOneWithoutMakwenatInput
+  motabaa_fanya?: Prisma.motabaa_fanya_tabCreateNestedManyWithoutMokawenatInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabCreateNestedManyWithoutMokawenatInput
+}
+
+export type makwenat_tabUncheckedCreateWithoutMotabaa_MalyInput = {
+  mukwenID?: number
+  projectID: number
+  mukwenName?: string | null
+  KulfaTotal?: string | null
+  txtehala?: string | null
+  txtcompany?: string | null
+  txtakedNumber?: string | null
+  dtakedDate?: string | null
+  txtnotes?: string | null
+  muda?: string | null
+  txtLocation?: string | null
+  txtContractName?: string | null
+  txtMobashraDate?: string | null
+  txtMokemName?: string | null
+  txtMobile?: string | null
+  imageData?: string | null
+  motabaa_fanya?: Prisma.motabaa_fanya_tabUncheckedCreateNestedManyWithoutMokawenatInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabUncheckedCreateNestedManyWithoutMokawenatInput
+}
+
+export type makwenat_tabCreateOrConnectWithoutMotabaa_MalyInput = {
+  where: Prisma.makwenat_tabWhereUniqueInput
+  create: Prisma.XOR<Prisma.makwenat_tabCreateWithoutMotabaa_MalyInput, Prisma.makwenat_tabUncheckedCreateWithoutMotabaa_MalyInput>
+}
+
+export type makwenat_tabUpsertWithoutMotabaa_MalyInput = {
+  update: Prisma.XOR<Prisma.makwenat_tabUpdateWithoutMotabaa_MalyInput, Prisma.makwenat_tabUncheckedUpdateWithoutMotabaa_MalyInput>
+  create: Prisma.XOR<Prisma.makwenat_tabCreateWithoutMotabaa_MalyInput, Prisma.makwenat_tabUncheckedCreateWithoutMotabaa_MalyInput>
+  where?: Prisma.makwenat_tabWhereInput
+}
+
+export type makwenat_tabUpdateToOneWithWhereWithoutMotabaa_MalyInput = {
+  where?: Prisma.makwenat_tabWhereInput
+  data: Prisma.XOR<Prisma.makwenat_tabUpdateWithoutMotabaa_MalyInput, Prisma.makwenat_tabUncheckedUpdateWithoutMotabaa_MalyInput>
+}
+
+export type makwenat_tabUpdateWithoutMotabaa_MalyInput = {
+  mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtcompany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtakedNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dtakedDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtnotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  muda?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtLocation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtContractName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobashraDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMokemName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  imageData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  projects?: Prisma.project_tabUpdateOneRequiredWithoutMakwenatNestedInput
+  motabaa_fanya?: Prisma.motabaa_fanya_tabUpdateManyWithoutMokawenatNestedInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabUpdateManyWithoutMokawenatNestedInput
+}
+
+export type makwenat_tabUncheckedUpdateWithoutMotabaa_MalyInput = {
+  mukwenID?: Prisma.IntFieldUpdateOperationsInput | number
+  projectID?: Prisma.IntFieldUpdateOperationsInput | number
+  mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtcompany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtakedNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dtakedDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtnotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  muda?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtLocation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtContractName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobashraDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMokemName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  imageData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  motabaa_fanya?: Prisma.motabaa_fanya_tabUncheckedUpdateManyWithoutMokawenatNestedInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabUncheckedUpdateManyWithoutMokawenatNestedInput
+}
+
+export type makwenat_tabCreateWithoutMotabaa_QanwnInput = {
+  mukwenName?: string | null
+  KulfaTotal?: string | null
+  txtehala?: string | null
+  txtcompany?: string | null
+  txtakedNumber?: string | null
+  dtakedDate?: string | null
+  txtnotes?: string | null
+  muda?: string | null
+  txtLocation?: string | null
+  txtContractName?: string | null
+  txtMobashraDate?: string | null
+  txtMokemName?: string | null
+  txtMobile?: string | null
+  imageData?: string | null
+  projects: Prisma.project_tabCreateNestedOneWithoutMakwenatInput
+  motabaa_fanya?: Prisma.motabaa_fanya_tabCreateNestedManyWithoutMokawenatInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabCreateNestedManyWithoutMokawenatInput
+}
+
+export type makwenat_tabUncheckedCreateWithoutMotabaa_QanwnInput = {
+  mukwenID?: number
+  projectID: number
+  mukwenName?: string | null
+  KulfaTotal?: string | null
+  txtehala?: string | null
+  txtcompany?: string | null
+  txtakedNumber?: string | null
+  dtakedDate?: string | null
+  txtnotes?: string | null
+  muda?: string | null
+  txtLocation?: string | null
+  txtContractName?: string | null
+  txtMobashraDate?: string | null
+  txtMokemName?: string | null
+  txtMobile?: string | null
+  imageData?: string | null
+  motabaa_fanya?: Prisma.motabaa_fanya_tabUncheckedCreateNestedManyWithoutMokawenatInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabUncheckedCreateNestedManyWithoutMokawenatInput
+}
+
+export type makwenat_tabCreateOrConnectWithoutMotabaa_QanwnInput = {
+  where: Prisma.makwenat_tabWhereUniqueInput
+  create: Prisma.XOR<Prisma.makwenat_tabCreateWithoutMotabaa_QanwnInput, Prisma.makwenat_tabUncheckedCreateWithoutMotabaa_QanwnInput>
+}
+
+export type makwenat_tabUpsertWithoutMotabaa_QanwnInput = {
+  update: Prisma.XOR<Prisma.makwenat_tabUpdateWithoutMotabaa_QanwnInput, Prisma.makwenat_tabUncheckedUpdateWithoutMotabaa_QanwnInput>
+  create: Prisma.XOR<Prisma.makwenat_tabCreateWithoutMotabaa_QanwnInput, Prisma.makwenat_tabUncheckedCreateWithoutMotabaa_QanwnInput>
+  where?: Prisma.makwenat_tabWhereInput
+}
+
+export type makwenat_tabUpdateToOneWithWhereWithoutMotabaa_QanwnInput = {
+  where?: Prisma.makwenat_tabWhereInput
+  data: Prisma.XOR<Prisma.makwenat_tabUpdateWithoutMotabaa_QanwnInput, Prisma.makwenat_tabUncheckedUpdateWithoutMotabaa_QanwnInput>
+}
+
+export type makwenat_tabUpdateWithoutMotabaa_QanwnInput = {
+  mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtcompany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtakedNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dtakedDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtnotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  muda?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtLocation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtContractName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobashraDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMokemName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  imageData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  projects?: Prisma.project_tabUpdateOneRequiredWithoutMakwenatNestedInput
+  motabaa_fanya?: Prisma.motabaa_fanya_tabUpdateManyWithoutMokawenatNestedInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabUpdateManyWithoutMokawenatNestedInput
+}
+
+export type makwenat_tabUncheckedUpdateWithoutMotabaa_QanwnInput = {
+  mukwenID?: Prisma.IntFieldUpdateOperationsInput | number
+  projectID?: Prisma.IntFieldUpdateOperationsInput | number
+  mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtcompany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtakedNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dtakedDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtnotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  muda?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtLocation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtContractName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobashraDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMokemName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  imageData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  motabaa_fanya?: Prisma.motabaa_fanya_tabUncheckedUpdateManyWithoutMokawenatNestedInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabUncheckedUpdateManyWithoutMokawenatNestedInput
+}
+
+export type makwenat_tabCreateManyProjectsInput = {
+  mukwenName?: string | null
+  KulfaTotal?: string | null
+  txtehala?: string | null
+  txtcompany?: string | null
+  txtakedNumber?: string | null
+  dtakedDate?: string | null
+  txtnotes?: string | null
+  muda?: string | null
+  txtLocation?: string | null
+  txtContractName?: string | null
+  txtMobashraDate?: string | null
+  txtMokemName?: string | null
+  txtMobile?: string | null
+  imageData?: string | null
+}
+
+export type makwenat_tabUpdateWithoutProjectsInput = {
+  mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtcompany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtakedNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dtakedDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtnotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  muda?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtLocation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtContractName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobashraDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMokemName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  imageData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  motabaa_fanya?: Prisma.motabaa_fanya_tabUpdateManyWithoutMokawenatNestedInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabUpdateManyWithoutMokawenatNestedInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabUpdateManyWithoutMokawenatNestedInput
+}
+
+export type makwenat_tabUncheckedUpdateWithoutProjectsInput = {
+  mukwenID?: Prisma.IntFieldUpdateOperationsInput | number
+  mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtcompany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtakedNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dtakedDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtnotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  muda?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtLocation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtContractName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobashraDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMokemName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  imageData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  motabaa_fanya?: Prisma.motabaa_fanya_tabUncheckedUpdateManyWithoutMokawenatNestedInput
+  motabaa_Maly?: Prisma.motabaa_Maly_tabUncheckedUpdateManyWithoutMokawenatNestedInput
+  motabaa_Qanwn?: Prisma.motabaa_Qanwny_tabUncheckedUpdateManyWithoutMokawenatNestedInput
+}
+
+export type makwenat_tabUncheckedUpdateManyWithoutProjectsInput = {
+  mukwenID?: Prisma.IntFieldUpdateOperationsInput | number
+  mukwenName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  KulfaTotal?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtehala?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtcompany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtakedNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  dtakedDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtnotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  muda?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtLocation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtContractName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobashraDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMokemName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtMobile?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  imageData?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+
+/**
+ * Count Type Makwenat_tabCountOutputType
+ */
+
+export type Makwenat_tabCountOutputType = {
+  motabaa_fanya: number
+  motabaa_Maly: number
+  motabaa_Qanwn: number
+}
+
+export type Makwenat_tabCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  motabaa_fanya?: boolean | Makwenat_tabCountOutputTypeCountMotabaa_fanyaArgs
+  motabaa_Maly?: boolean | Makwenat_tabCountOutputTypeCountMotabaa_MalyArgs
+  motabaa_Qanwn?: boolean | Makwenat_tabCountOutputTypeCountMotabaa_QanwnArgs
+}
+
+/**
+ * Makwenat_tabCountOutputType without action
+ */
+export type Makwenat_tabCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Makwenat_tabCountOutputType
+   */
+  select?: Prisma.Makwenat_tabCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * Makwenat_tabCountOutputType without action
+ */
+export type Makwenat_tabCountOutputTypeCountMotabaa_fanyaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.motabaa_fanya_tabWhereInput
+}
+
+/**
+ * Makwenat_tabCountOutputType without action
+ */
+export type Makwenat_tabCountOutputTypeCountMotabaa_MalyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.motabaa_Maly_tabWhereInput
+}
+
+/**
+ * Makwenat_tabCountOutputType without action
+ */
+export type Makwenat_tabCountOutputTypeCountMotabaa_QanwnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.motabaa_Qanwny_tabWhereInput
+}
 
 
 export type makwenat_tabSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -632,6 +1239,11 @@ export type makwenat_tabSelect<ExtArgs extends runtime.Types.Extensions.Internal
   txtMokemName?: boolean
   txtMobile?: boolean
   imageData?: boolean
+  projects?: boolean | Prisma.project_tabDefaultArgs<ExtArgs>
+  motabaa_fanya?: boolean | Prisma.makwenat_tab$motabaa_fanyaArgs<ExtArgs>
+  motabaa_Maly?: boolean | Prisma.makwenat_tab$motabaa_MalyArgs<ExtArgs>
+  motabaa_Qanwn?: boolean | Prisma.makwenat_tab$motabaa_QanwnArgs<ExtArgs>
+  _count?: boolean | Prisma.Makwenat_tabCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["makwenat_tab"]>
 
 
@@ -656,13 +1268,25 @@ export type makwenat_tabSelectScalar = {
 }
 
 export type makwenat_tabOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"mukwenID" | "projectID" | "mukwenName" | "KulfaTotal" | "txtehala" | "txtcompany" | "txtakedNumber" | "dtakedDate" | "txtnotes" | "muda" | "txtLocation" | "txtContractName" | "txtMobashraDate" | "txtMokemName" | "txtMobile" | "imageData", ExtArgs["result"]["makwenat_tab"]>
+export type makwenat_tabInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  projects?: boolean | Prisma.project_tabDefaultArgs<ExtArgs>
+  motabaa_fanya?: boolean | Prisma.makwenat_tab$motabaa_fanyaArgs<ExtArgs>
+  motabaa_Maly?: boolean | Prisma.makwenat_tab$motabaa_MalyArgs<ExtArgs>
+  motabaa_Qanwn?: boolean | Prisma.makwenat_tab$motabaa_QanwnArgs<ExtArgs>
+  _count?: boolean | Prisma.Makwenat_tabCountOutputTypeDefaultArgs<ExtArgs>
+}
 
 export type $makwenat_tabPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "makwenat_tab"
-  objects: {}
+  objects: {
+    projects: Prisma.$project_tabPayload<ExtArgs>
+    motabaa_fanya: Prisma.$motabaa_fanya_tabPayload<ExtArgs>[]
+    motabaa_Maly: Prisma.$motabaa_Maly_tabPayload<ExtArgs>[]
+    motabaa_Qanwn: Prisma.$motabaa_Qanwny_tabPayload<ExtArgs>[]
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     mukwenID: number
-    projectID: number | null
+    projectID: number
     mukwenName: string | null
     KulfaTotal: string | null
     txtehala: string | null
@@ -1017,6 +1641,10 @@ readonly fields: makwenat_tabFieldRefs;
  */
 export interface Prisma__makwenat_tabClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  projects<T extends Prisma.project_tabDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.project_tabDefaultArgs<ExtArgs>>): Prisma.Prisma__project_tabClient<runtime.Types.Result.GetResult<Prisma.$project_tabPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  motabaa_fanya<T extends Prisma.makwenat_tab$motabaa_fanyaArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.makwenat_tab$motabaa_fanyaArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$motabaa_fanya_tabPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  motabaa_Maly<T extends Prisma.makwenat_tab$motabaa_MalyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.makwenat_tab$motabaa_MalyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$motabaa_Maly_tabPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  motabaa_Qanwn<T extends Prisma.makwenat_tab$motabaa_QanwnArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.makwenat_tab$motabaa_QanwnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$motabaa_Qanwny_tabPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1079,6 +1707,10 @@ export type makwenat_tabFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.
    */
   omit?: Prisma.makwenat_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.makwenat_tabInclude<ExtArgs> | null
+  /**
    * Filter, which makwenat_tab to fetch.
    */
   where: Prisma.makwenat_tabWhereUniqueInput
@@ -1097,6 +1729,10 @@ export type makwenat_tabFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Exte
    */
   omit?: Prisma.makwenat_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.makwenat_tabInclude<ExtArgs> | null
+  /**
    * Filter, which makwenat_tab to fetch.
    */
   where: Prisma.makwenat_tabWhereUniqueInput
@@ -1114,6 +1750,10 @@ export type makwenat_tabFindFirstArgs<ExtArgs extends runtime.Types.Extensions.I
    * Omit specific fields from the makwenat_tab
    */
   omit?: Prisma.makwenat_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.makwenat_tabInclude<ExtArgs> | null
   /**
    * Filter, which makwenat_tab to fetch.
    */
@@ -1163,6 +1803,10 @@ export type makwenat_tabFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Exten
    */
   omit?: Prisma.makwenat_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.makwenat_tabInclude<ExtArgs> | null
+  /**
    * Filter, which makwenat_tab to fetch.
    */
   where?: Prisma.makwenat_tabWhereInput
@@ -1210,6 +1854,10 @@ export type makwenat_tabFindManyArgs<ExtArgs extends runtime.Types.Extensions.In
    * Omit specific fields from the makwenat_tab
    */
   omit?: Prisma.makwenat_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.makwenat_tabInclude<ExtArgs> | null
   /**
    * Filter, which makwenat_tabs to fetch.
    */
@@ -1259,9 +1907,13 @@ export type makwenat_tabCreateArgs<ExtArgs extends runtime.Types.Extensions.Inte
    */
   omit?: Prisma.makwenat_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.makwenat_tabInclude<ExtArgs> | null
+  /**
    * The data needed to create a makwenat_tab.
    */
-  data?: Prisma.XOR<Prisma.makwenat_tabCreateInput, Prisma.makwenat_tabUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.makwenat_tabCreateInput, Prisma.makwenat_tabUncheckedCreateInput>
 }
 
 /**
@@ -1286,6 +1938,10 @@ export type makwenat_tabUpdateArgs<ExtArgs extends runtime.Types.Extensions.Inte
    * Omit specific fields from the makwenat_tab
    */
   omit?: Prisma.makwenat_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.makwenat_tabInclude<ExtArgs> | null
   /**
    * The data needed to update a makwenat_tab.
    */
@@ -1327,6 +1983,10 @@ export type makwenat_tabUpsertArgs<ExtArgs extends runtime.Types.Extensions.Inte
    */
   omit?: Prisma.makwenat_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.makwenat_tabInclude<ExtArgs> | null
+  /**
    * The filter to search for the makwenat_tab to update in case it exists.
    */
   where: Prisma.makwenat_tabWhereUniqueInput
@@ -1353,6 +2013,10 @@ export type makwenat_tabDeleteArgs<ExtArgs extends runtime.Types.Extensions.Inte
    */
   omit?: Prisma.makwenat_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.makwenat_tabInclude<ExtArgs> | null
+  /**
    * Filter which makwenat_tab to delete.
    */
   where: Prisma.makwenat_tabWhereUniqueInput
@@ -1373,6 +2037,78 @@ export type makwenat_tabDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.
 }
 
 /**
+ * makwenat_tab.motabaa_fanya
+ */
+export type makwenat_tab$motabaa_fanyaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the motabaa_fanya_tab
+   */
+  select?: Prisma.motabaa_fanya_tabSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the motabaa_fanya_tab
+   */
+  omit?: Prisma.motabaa_fanya_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_fanya_tabInclude<ExtArgs> | null
+  where?: Prisma.motabaa_fanya_tabWhereInput
+  orderBy?: Prisma.motabaa_fanya_tabOrderByWithRelationInput | Prisma.motabaa_fanya_tabOrderByWithRelationInput[]
+  cursor?: Prisma.motabaa_fanya_tabWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.Motabaa_fanya_tabScalarFieldEnum | Prisma.Motabaa_fanya_tabScalarFieldEnum[]
+}
+
+/**
+ * makwenat_tab.motabaa_Maly
+ */
+export type makwenat_tab$motabaa_MalyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the motabaa_Maly_tab
+   */
+  select?: Prisma.motabaa_Maly_tabSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the motabaa_Maly_tab
+   */
+  omit?: Prisma.motabaa_Maly_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_Maly_tabInclude<ExtArgs> | null
+  where?: Prisma.motabaa_Maly_tabWhereInput
+  orderBy?: Prisma.motabaa_Maly_tabOrderByWithRelationInput | Prisma.motabaa_Maly_tabOrderByWithRelationInput[]
+  cursor?: Prisma.motabaa_Maly_tabWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.Motabaa_Maly_tabScalarFieldEnum | Prisma.Motabaa_Maly_tabScalarFieldEnum[]
+}
+
+/**
+ * makwenat_tab.motabaa_Qanwn
+ */
+export type makwenat_tab$motabaa_QanwnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the motabaa_Qanwny_tab
+   */
+  select?: Prisma.motabaa_Qanwny_tabSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the motabaa_Qanwny_tab
+   */
+  omit?: Prisma.motabaa_Qanwny_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_Qanwny_tabInclude<ExtArgs> | null
+  where?: Prisma.motabaa_Qanwny_tabWhereInput
+  orderBy?: Prisma.motabaa_Qanwny_tabOrderByWithRelationInput | Prisma.motabaa_Qanwny_tabOrderByWithRelationInput[]
+  cursor?: Prisma.motabaa_Qanwny_tabWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.Motabaa_Qanwny_tabScalarFieldEnum | Prisma.Motabaa_Qanwny_tabScalarFieldEnum[]
+}
+
+/**
  * makwenat_tab without action
  */
 export type makwenat_tabDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1384,4 +2120,8 @@ export type makwenat_tabDefaultArgs<ExtArgs extends runtime.Types.Extensions.Int
    * Omit specific fields from the makwenat_tab
    */
   omit?: Prisma.makwenat_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.makwenat_tabInclude<ExtArgs> | null
 }

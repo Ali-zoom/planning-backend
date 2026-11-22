@@ -31,8 +31,8 @@ export * from "./enums.js"
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more Makwenat_tabs
- * const makwenat_tabs = await prisma.makwenat_tab.findMany()
+ * // Fetch zero or more Project_tabs
+ * const project_tabs = await prisma.project_tab.findMany()
  * ```
  * 
  * Read more in our [docs](https://pris.ly/d/client).
@@ -41,6 +41,11 @@ export const PrismaClient = $Class.getPrismaClientClass()
 export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts extends Prisma.PrismaClientOptions["omit"] = Prisma.PrismaClientOptions["omit"], ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = $Class.PrismaClient<LogOpts, OmitOpts, ExtArgs>
 export { Prisma }
 
+/**
+ * Model project_tab
+ * 
+ */
+export type project_tab = Prisma.project_tabModel
 /**
  * Model makwenat_tab
  * 
@@ -61,8 +66,3 @@ export type motabaa_Maly_tab = Prisma.motabaa_Maly_tabModel
  * 
  */
 export type motabaa_Qanwny_tab = Prisma.motabaa_Qanwny_tabModel
-/**
- * Model project_tab
- * 
- */
-export type project_tab = Prisma.project_tabModel

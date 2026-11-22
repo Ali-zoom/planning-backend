@@ -226,7 +226,7 @@ export type motabaa_fanya_tabGroupByArgs<ExtArgs extends runtime.Types.Extension
 export type Motabaa_fanya_tabGroupByOutputType = {
   motabaaFanyID: number
   proID: number | null
-  mokawenID: number | null
+  mokawenID: number
   bookNumber: string | null
   bookDate: string | null
   engazFany: string | null
@@ -263,7 +263,7 @@ export type motabaa_fanya_tabWhereInput = {
   NOT?: Prisma.motabaa_fanya_tabWhereInput | Prisma.motabaa_fanya_tabWhereInput[]
   motabaaFanyID?: Prisma.IntFilter<"motabaa_fanya_tab"> | number
   proID?: Prisma.IntNullableFilter<"motabaa_fanya_tab"> | number | null
-  mokawenID?: Prisma.IntNullableFilter<"motabaa_fanya_tab"> | number | null
+  mokawenID?: Prisma.IntFilter<"motabaa_fanya_tab"> | number
   bookNumber?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
   bookDate?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
   engazFany?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
@@ -272,12 +272,13 @@ export type motabaa_fanya_tabWhereInput = {
   notes?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
   nesbatEnheraf?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
   txtEstelamDate?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
+  mokawenat?: Prisma.XOR<Prisma.Makwenat_tabScalarRelationFilter, Prisma.makwenat_tabWhereInput>
 }
 
 export type motabaa_fanya_tabOrderByWithRelationInput = {
   motabaaFanyID?: Prisma.SortOrder
   proID?: Prisma.SortOrderInput | Prisma.SortOrder
-  mokawenID?: Prisma.SortOrderInput | Prisma.SortOrder
+  mokawenID?: Prisma.SortOrder
   bookNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   bookDate?: Prisma.SortOrderInput | Prisma.SortOrder
   engazFany?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -286,6 +287,7 @@ export type motabaa_fanya_tabOrderByWithRelationInput = {
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
   nesbatEnheraf?: Prisma.SortOrderInput | Prisma.SortOrder
   txtEstelamDate?: Prisma.SortOrderInput | Prisma.SortOrder
+  mokawenat?: Prisma.makwenat_tabOrderByWithRelationInput
 }
 
 export type motabaa_fanya_tabWhereUniqueInput = Prisma.AtLeast<{
@@ -294,7 +296,7 @@ export type motabaa_fanya_tabWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.motabaa_fanya_tabWhereInput[]
   NOT?: Prisma.motabaa_fanya_tabWhereInput | Prisma.motabaa_fanya_tabWhereInput[]
   proID?: Prisma.IntNullableFilter<"motabaa_fanya_tab"> | number | null
-  mokawenID?: Prisma.IntNullableFilter<"motabaa_fanya_tab"> | number | null
+  mokawenID?: Prisma.IntFilter<"motabaa_fanya_tab"> | number
   bookNumber?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
   bookDate?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
   engazFany?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
@@ -303,12 +305,13 @@ export type motabaa_fanya_tabWhereUniqueInput = Prisma.AtLeast<{
   notes?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
   nesbatEnheraf?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
   txtEstelamDate?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
+  mokawenat?: Prisma.XOR<Prisma.Makwenat_tabScalarRelationFilter, Prisma.makwenat_tabWhereInput>
 }, "motabaaFanyID">
 
 export type motabaa_fanya_tabOrderByWithAggregationInput = {
   motabaaFanyID?: Prisma.SortOrder
   proID?: Prisma.SortOrderInput | Prisma.SortOrder
-  mokawenID?: Prisma.SortOrderInput | Prisma.SortOrder
+  mokawenID?: Prisma.SortOrder
   bookNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   bookDate?: Prisma.SortOrderInput | Prisma.SortOrder
   engazFany?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -330,7 +333,7 @@ export type motabaa_fanya_tabScalarWhereWithAggregatesInput = {
   NOT?: Prisma.motabaa_fanya_tabScalarWhereWithAggregatesInput | Prisma.motabaa_fanya_tabScalarWhereWithAggregatesInput[]
   motabaaFanyID?: Prisma.IntWithAggregatesFilter<"motabaa_fanya_tab"> | number
   proID?: Prisma.IntNullableWithAggregatesFilter<"motabaa_fanya_tab"> | number | null
-  mokawenID?: Prisma.IntNullableWithAggregatesFilter<"motabaa_fanya_tab"> | number | null
+  mokawenID?: Prisma.IntWithAggregatesFilter<"motabaa_fanya_tab"> | number
   bookNumber?: Prisma.StringNullableWithAggregatesFilter<"motabaa_fanya_tab"> | string | null
   bookDate?: Prisma.StringNullableWithAggregatesFilter<"motabaa_fanya_tab"> | string | null
   engazFany?: Prisma.StringNullableWithAggregatesFilter<"motabaa_fanya_tab"> | string | null
@@ -343,7 +346,6 @@ export type motabaa_fanya_tabScalarWhereWithAggregatesInput = {
 
 export type motabaa_fanya_tabCreateInput = {
   proID?: number | null
-  mokawenID?: number | null
   bookNumber?: string | null
   bookDate?: string | null
   engazFany?: string | null
@@ -352,12 +354,13 @@ export type motabaa_fanya_tabCreateInput = {
   notes?: string | null
   nesbatEnheraf?: string | null
   txtEstelamDate?: string | null
+  mokawenat: Prisma.makwenat_tabCreateNestedOneWithoutMotabaa_fanyaInput
 }
 
 export type motabaa_fanya_tabUncheckedCreateInput = {
   motabaaFanyID?: number
   proID?: number | null
-  mokawenID?: number | null
+  mokawenID: number
   bookNumber?: string | null
   bookDate?: string | null
   engazFany?: string | null
@@ -370,7 +373,6 @@ export type motabaa_fanya_tabUncheckedCreateInput = {
 
 export type motabaa_fanya_tabUpdateInput = {
   proID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mokawenID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   bookNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   bookDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   engazFany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -379,12 +381,13 @@ export type motabaa_fanya_tabUpdateInput = {
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nesbatEnheraf?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   txtEstelamDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mokawenat?: Prisma.makwenat_tabUpdateOneRequiredWithoutMotabaa_fanyaNestedInput
 }
 
 export type motabaa_fanya_tabUncheckedUpdateInput = {
   motabaaFanyID?: Prisma.IntFieldUpdateOperationsInput | number
   proID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mokawenID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  mokawenID?: Prisma.IntFieldUpdateOperationsInput | number
   bookNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   bookDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   engazFany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -397,7 +400,7 @@ export type motabaa_fanya_tabUncheckedUpdateInput = {
 
 export type motabaa_fanya_tabCreateManyInput = {
   proID?: number | null
-  mokawenID?: number | null
+  mokawenID: number
   bookNumber?: string | null
   bookDate?: string | null
   engazFany?: string | null
@@ -410,7 +413,6 @@ export type motabaa_fanya_tabCreateManyInput = {
 
 export type motabaa_fanya_tabUpdateManyMutationInput = {
   proID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mokawenID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   bookNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   bookDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   engazFany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -424,7 +426,7 @@ export type motabaa_fanya_tabUpdateManyMutationInput = {
 export type motabaa_fanya_tabUncheckedUpdateManyInput = {
   motabaaFanyID?: Prisma.IntFieldUpdateOperationsInput | number
   proID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mokawenID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  mokawenID?: Prisma.IntFieldUpdateOperationsInput | number
   bookNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   bookDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   engazFany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -433,6 +435,16 @@ export type motabaa_fanya_tabUncheckedUpdateManyInput = {
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nesbatEnheraf?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   txtEstelamDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type Motabaa_fanya_tabListRelationFilter = {
+  every?: Prisma.motabaa_fanya_tabWhereInput
+  some?: Prisma.motabaa_fanya_tabWhereInput
+  none?: Prisma.motabaa_fanya_tabWhereInput
+}
+
+export type motabaa_fanya_tabOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
 }
 
 export type motabaa_fanya_tabCountOrderByAggregateInput = {
@@ -489,6 +501,173 @@ export type motabaa_fanya_tabSumOrderByAggregateInput = {
   mokawenID?: Prisma.SortOrder
 }
 
+export type motabaa_fanya_tabCreateNestedManyWithoutMokawenatInput = {
+  create?: Prisma.XOR<Prisma.motabaa_fanya_tabCreateWithoutMokawenatInput, Prisma.motabaa_fanya_tabUncheckedCreateWithoutMokawenatInput> | Prisma.motabaa_fanya_tabCreateWithoutMokawenatInput[] | Prisma.motabaa_fanya_tabUncheckedCreateWithoutMokawenatInput[]
+  connectOrCreate?: Prisma.motabaa_fanya_tabCreateOrConnectWithoutMokawenatInput | Prisma.motabaa_fanya_tabCreateOrConnectWithoutMokawenatInput[]
+  createMany?: Prisma.motabaa_fanya_tabCreateManyMokawenatInputEnvelope
+  connect?: Prisma.motabaa_fanya_tabWhereUniqueInput | Prisma.motabaa_fanya_tabWhereUniqueInput[]
+}
+
+export type motabaa_fanya_tabUncheckedCreateNestedManyWithoutMokawenatInput = {
+  create?: Prisma.XOR<Prisma.motabaa_fanya_tabCreateWithoutMokawenatInput, Prisma.motabaa_fanya_tabUncheckedCreateWithoutMokawenatInput> | Prisma.motabaa_fanya_tabCreateWithoutMokawenatInput[] | Prisma.motabaa_fanya_tabUncheckedCreateWithoutMokawenatInput[]
+  connectOrCreate?: Prisma.motabaa_fanya_tabCreateOrConnectWithoutMokawenatInput | Prisma.motabaa_fanya_tabCreateOrConnectWithoutMokawenatInput[]
+  createMany?: Prisma.motabaa_fanya_tabCreateManyMokawenatInputEnvelope
+  connect?: Prisma.motabaa_fanya_tabWhereUniqueInput | Prisma.motabaa_fanya_tabWhereUniqueInput[]
+}
+
+export type motabaa_fanya_tabUpdateManyWithoutMokawenatNestedInput = {
+  create?: Prisma.XOR<Prisma.motabaa_fanya_tabCreateWithoutMokawenatInput, Prisma.motabaa_fanya_tabUncheckedCreateWithoutMokawenatInput> | Prisma.motabaa_fanya_tabCreateWithoutMokawenatInput[] | Prisma.motabaa_fanya_tabUncheckedCreateWithoutMokawenatInput[]
+  connectOrCreate?: Prisma.motabaa_fanya_tabCreateOrConnectWithoutMokawenatInput | Prisma.motabaa_fanya_tabCreateOrConnectWithoutMokawenatInput[]
+  upsert?: Prisma.motabaa_fanya_tabUpsertWithWhereUniqueWithoutMokawenatInput | Prisma.motabaa_fanya_tabUpsertWithWhereUniqueWithoutMokawenatInput[]
+  createMany?: Prisma.motabaa_fanya_tabCreateManyMokawenatInputEnvelope
+  set?: Prisma.motabaa_fanya_tabWhereUniqueInput | Prisma.motabaa_fanya_tabWhereUniqueInput[]
+  disconnect?: Prisma.motabaa_fanya_tabWhereUniqueInput | Prisma.motabaa_fanya_tabWhereUniqueInput[]
+  delete?: Prisma.motabaa_fanya_tabWhereUniqueInput | Prisma.motabaa_fanya_tabWhereUniqueInput[]
+  connect?: Prisma.motabaa_fanya_tabWhereUniqueInput | Prisma.motabaa_fanya_tabWhereUniqueInput[]
+  update?: Prisma.motabaa_fanya_tabUpdateWithWhereUniqueWithoutMokawenatInput | Prisma.motabaa_fanya_tabUpdateWithWhereUniqueWithoutMokawenatInput[]
+  updateMany?: Prisma.motabaa_fanya_tabUpdateManyWithWhereWithoutMokawenatInput | Prisma.motabaa_fanya_tabUpdateManyWithWhereWithoutMokawenatInput[]
+  deleteMany?: Prisma.motabaa_fanya_tabScalarWhereInput | Prisma.motabaa_fanya_tabScalarWhereInput[]
+}
+
+export type motabaa_fanya_tabUncheckedUpdateManyWithoutMokawenatNestedInput = {
+  create?: Prisma.XOR<Prisma.motabaa_fanya_tabCreateWithoutMokawenatInput, Prisma.motabaa_fanya_tabUncheckedCreateWithoutMokawenatInput> | Prisma.motabaa_fanya_tabCreateWithoutMokawenatInput[] | Prisma.motabaa_fanya_tabUncheckedCreateWithoutMokawenatInput[]
+  connectOrCreate?: Prisma.motabaa_fanya_tabCreateOrConnectWithoutMokawenatInput | Prisma.motabaa_fanya_tabCreateOrConnectWithoutMokawenatInput[]
+  upsert?: Prisma.motabaa_fanya_tabUpsertWithWhereUniqueWithoutMokawenatInput | Prisma.motabaa_fanya_tabUpsertWithWhereUniqueWithoutMokawenatInput[]
+  createMany?: Prisma.motabaa_fanya_tabCreateManyMokawenatInputEnvelope
+  set?: Prisma.motabaa_fanya_tabWhereUniqueInput | Prisma.motabaa_fanya_tabWhereUniqueInput[]
+  disconnect?: Prisma.motabaa_fanya_tabWhereUniqueInput | Prisma.motabaa_fanya_tabWhereUniqueInput[]
+  delete?: Prisma.motabaa_fanya_tabWhereUniqueInput | Prisma.motabaa_fanya_tabWhereUniqueInput[]
+  connect?: Prisma.motabaa_fanya_tabWhereUniqueInput | Prisma.motabaa_fanya_tabWhereUniqueInput[]
+  update?: Prisma.motabaa_fanya_tabUpdateWithWhereUniqueWithoutMokawenatInput | Prisma.motabaa_fanya_tabUpdateWithWhereUniqueWithoutMokawenatInput[]
+  updateMany?: Prisma.motabaa_fanya_tabUpdateManyWithWhereWithoutMokawenatInput | Prisma.motabaa_fanya_tabUpdateManyWithWhereWithoutMokawenatInput[]
+  deleteMany?: Prisma.motabaa_fanya_tabScalarWhereInput | Prisma.motabaa_fanya_tabScalarWhereInput[]
+}
+
+export type NullableIntFieldUpdateOperationsInput = {
+  set?: number | null
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
+export type motabaa_fanya_tabCreateWithoutMokawenatInput = {
+  proID?: number | null
+  bookNumber?: string | null
+  bookDate?: string | null
+  engazFany?: string | null
+  engazMokhatat?: string | null
+  mokef?: string | null
+  notes?: string | null
+  nesbatEnheraf?: string | null
+  txtEstelamDate?: string | null
+}
+
+export type motabaa_fanya_tabUncheckedCreateWithoutMokawenatInput = {
+  motabaaFanyID?: number
+  proID?: number | null
+  bookNumber?: string | null
+  bookDate?: string | null
+  engazFany?: string | null
+  engazMokhatat?: string | null
+  mokef?: string | null
+  notes?: string | null
+  nesbatEnheraf?: string | null
+  txtEstelamDate?: string | null
+}
+
+export type motabaa_fanya_tabCreateOrConnectWithoutMokawenatInput = {
+  where: Prisma.motabaa_fanya_tabWhereUniqueInput
+  create: Prisma.XOR<Prisma.motabaa_fanya_tabCreateWithoutMokawenatInput, Prisma.motabaa_fanya_tabUncheckedCreateWithoutMokawenatInput>
+}
+
+export type motabaa_fanya_tabCreateManyMokawenatInputEnvelope = {
+  data: Prisma.motabaa_fanya_tabCreateManyMokawenatInput | Prisma.motabaa_fanya_tabCreateManyMokawenatInput[]
+}
+
+export type motabaa_fanya_tabUpsertWithWhereUniqueWithoutMokawenatInput = {
+  where: Prisma.motabaa_fanya_tabWhereUniqueInput
+  update: Prisma.XOR<Prisma.motabaa_fanya_tabUpdateWithoutMokawenatInput, Prisma.motabaa_fanya_tabUncheckedUpdateWithoutMokawenatInput>
+  create: Prisma.XOR<Prisma.motabaa_fanya_tabCreateWithoutMokawenatInput, Prisma.motabaa_fanya_tabUncheckedCreateWithoutMokawenatInput>
+}
+
+export type motabaa_fanya_tabUpdateWithWhereUniqueWithoutMokawenatInput = {
+  where: Prisma.motabaa_fanya_tabWhereUniqueInput
+  data: Prisma.XOR<Prisma.motabaa_fanya_tabUpdateWithoutMokawenatInput, Prisma.motabaa_fanya_tabUncheckedUpdateWithoutMokawenatInput>
+}
+
+export type motabaa_fanya_tabUpdateManyWithWhereWithoutMokawenatInput = {
+  where: Prisma.motabaa_fanya_tabScalarWhereInput
+  data: Prisma.XOR<Prisma.motabaa_fanya_tabUpdateManyMutationInput, Prisma.motabaa_fanya_tabUncheckedUpdateManyWithoutMokawenatInput>
+}
+
+export type motabaa_fanya_tabScalarWhereInput = {
+  AND?: Prisma.motabaa_fanya_tabScalarWhereInput | Prisma.motabaa_fanya_tabScalarWhereInput[]
+  OR?: Prisma.motabaa_fanya_tabScalarWhereInput[]
+  NOT?: Prisma.motabaa_fanya_tabScalarWhereInput | Prisma.motabaa_fanya_tabScalarWhereInput[]
+  motabaaFanyID?: Prisma.IntFilter<"motabaa_fanya_tab"> | number
+  proID?: Prisma.IntNullableFilter<"motabaa_fanya_tab"> | number | null
+  mokawenID?: Prisma.IntFilter<"motabaa_fanya_tab"> | number
+  bookNumber?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
+  bookDate?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
+  engazFany?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
+  engazMokhatat?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
+  mokef?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
+  notes?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
+  nesbatEnheraf?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
+  txtEstelamDate?: Prisma.StringNullableFilter<"motabaa_fanya_tab"> | string | null
+}
+
+export type motabaa_fanya_tabCreateManyMokawenatInput = {
+  proID?: number | null
+  bookNumber?: string | null
+  bookDate?: string | null
+  engazFany?: string | null
+  engazMokhatat?: string | null
+  mokef?: string | null
+  notes?: string | null
+  nesbatEnheraf?: string | null
+  txtEstelamDate?: string | null
+}
+
+export type motabaa_fanya_tabUpdateWithoutMokawenatInput = {
+  proID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  bookNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bookDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  engazFany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  engazMokhatat?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mokef?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nesbatEnheraf?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtEstelamDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type motabaa_fanya_tabUncheckedUpdateWithoutMokawenatInput = {
+  motabaaFanyID?: Prisma.IntFieldUpdateOperationsInput | number
+  proID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  bookNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bookDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  engazFany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  engazMokhatat?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mokef?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nesbatEnheraf?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtEstelamDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type motabaa_fanya_tabUncheckedUpdateManyWithoutMokawenatInput = {
+  motabaaFanyID?: Prisma.IntFieldUpdateOperationsInput | number
+  proID?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  bookNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bookDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  engazFany?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  engazMokhatat?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mokef?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nesbatEnheraf?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  txtEstelamDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
 
 
 export type motabaa_fanya_tabSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -503,6 +682,7 @@ export type motabaa_fanya_tabSelect<ExtArgs extends runtime.Types.Extensions.Int
   notes?: boolean
   nesbatEnheraf?: boolean
   txtEstelamDate?: boolean
+  mokawenat?: boolean | Prisma.makwenat_tabDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["motabaa_fanya_tab"]>
 
 
@@ -522,14 +702,19 @@ export type motabaa_fanya_tabSelectScalar = {
 }
 
 export type motabaa_fanya_tabOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"motabaaFanyID" | "proID" | "mokawenID" | "bookNumber" | "bookDate" | "engazFany" | "engazMokhatat" | "mokef" | "notes" | "nesbatEnheraf" | "txtEstelamDate", ExtArgs["result"]["motabaa_fanya_tab"]>
+export type motabaa_fanya_tabInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  mokawenat?: boolean | Prisma.makwenat_tabDefaultArgs<ExtArgs>
+}
 
 export type $motabaa_fanya_tabPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "motabaa_fanya_tab"
-  objects: {}
+  objects: {
+    mokawenat: Prisma.$makwenat_tabPayload<ExtArgs>
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     motabaaFanyID: number
     proID: number | null
-    mokawenID: number | null
+    mokawenID: number
     bookNumber: string | null
     bookDate: string | null
     engazFany: string | null
@@ -878,6 +1063,7 @@ readonly fields: motabaa_fanya_tabFieldRefs;
  */
 export interface Prisma__motabaa_fanya_tabClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  mokawenat<T extends Prisma.makwenat_tabDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.makwenat_tabDefaultArgs<ExtArgs>>): Prisma.Prisma__makwenat_tabClient<runtime.Types.Result.GetResult<Prisma.$makwenat_tabPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -935,6 +1121,10 @@ export type motabaa_fanya_tabFindUniqueArgs<ExtArgs extends runtime.Types.Extens
    */
   omit?: Prisma.motabaa_fanya_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_fanya_tabInclude<ExtArgs> | null
+  /**
    * Filter, which motabaa_fanya_tab to fetch.
    */
   where: Prisma.motabaa_fanya_tabWhereUniqueInput
@@ -953,6 +1143,10 @@ export type motabaa_fanya_tabFindUniqueOrThrowArgs<ExtArgs extends runtime.Types
    */
   omit?: Prisma.motabaa_fanya_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_fanya_tabInclude<ExtArgs> | null
+  /**
    * Filter, which motabaa_fanya_tab to fetch.
    */
   where: Prisma.motabaa_fanya_tabWhereUniqueInput
@@ -970,6 +1164,10 @@ export type motabaa_fanya_tabFindFirstArgs<ExtArgs extends runtime.Types.Extensi
    * Omit specific fields from the motabaa_fanya_tab
    */
   omit?: Prisma.motabaa_fanya_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_fanya_tabInclude<ExtArgs> | null
   /**
    * Filter, which motabaa_fanya_tab to fetch.
    */
@@ -1019,6 +1217,10 @@ export type motabaa_fanya_tabFindFirstOrThrowArgs<ExtArgs extends runtime.Types.
    */
   omit?: Prisma.motabaa_fanya_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_fanya_tabInclude<ExtArgs> | null
+  /**
    * Filter, which motabaa_fanya_tab to fetch.
    */
   where?: Prisma.motabaa_fanya_tabWhereInput
@@ -1066,6 +1268,10 @@ export type motabaa_fanya_tabFindManyArgs<ExtArgs extends runtime.Types.Extensio
    * Omit specific fields from the motabaa_fanya_tab
    */
   omit?: Prisma.motabaa_fanya_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_fanya_tabInclude<ExtArgs> | null
   /**
    * Filter, which motabaa_fanya_tabs to fetch.
    */
@@ -1115,9 +1321,13 @@ export type motabaa_fanya_tabCreateArgs<ExtArgs extends runtime.Types.Extensions
    */
   omit?: Prisma.motabaa_fanya_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_fanya_tabInclude<ExtArgs> | null
+  /**
    * The data needed to create a motabaa_fanya_tab.
    */
-  data?: Prisma.XOR<Prisma.motabaa_fanya_tabCreateInput, Prisma.motabaa_fanya_tabUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.motabaa_fanya_tabCreateInput, Prisma.motabaa_fanya_tabUncheckedCreateInput>
 }
 
 /**
@@ -1142,6 +1352,10 @@ export type motabaa_fanya_tabUpdateArgs<ExtArgs extends runtime.Types.Extensions
    * Omit specific fields from the motabaa_fanya_tab
    */
   omit?: Prisma.motabaa_fanya_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_fanya_tabInclude<ExtArgs> | null
   /**
    * The data needed to update a motabaa_fanya_tab.
    */
@@ -1183,6 +1397,10 @@ export type motabaa_fanya_tabUpsertArgs<ExtArgs extends runtime.Types.Extensions
    */
   omit?: Prisma.motabaa_fanya_tabOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_fanya_tabInclude<ExtArgs> | null
+  /**
    * The filter to search for the motabaa_fanya_tab to update in case it exists.
    */
   where: Prisma.motabaa_fanya_tabWhereUniqueInput
@@ -1208,6 +1426,10 @@ export type motabaa_fanya_tabDeleteArgs<ExtArgs extends runtime.Types.Extensions
    * Omit specific fields from the motabaa_fanya_tab
    */
   omit?: Prisma.motabaa_fanya_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_fanya_tabInclude<ExtArgs> | null
   /**
    * Filter which motabaa_fanya_tab to delete.
    */
@@ -1240,4 +1462,8 @@ export type motabaa_fanya_tabDefaultArgs<ExtArgs extends runtime.Types.Extension
    * Omit specific fields from the motabaa_fanya_tab
    */
   omit?: Prisma.motabaa_fanya_tabOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.motabaa_fanya_tabInclude<ExtArgs> | null
 }
