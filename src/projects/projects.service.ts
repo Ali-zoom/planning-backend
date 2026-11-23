@@ -26,13 +26,10 @@ export class ProjectsService {
     const [projects, totalProjects] = await Promise.all([
       this.prisma.project_tab.findMany({
         where,
+        include: { makwenat: true },
         skip: (currentPage - 1) * pageSize,
         take: pageSize,
         orderBy: { proID: 'desc' },
-        select: {
-          proID: true,
-          proname: true,
-        },
       }),
 
       this.prisma.project_tab.count({ where }),
@@ -45,5 +42,19 @@ export class ProjectsService {
       currentPage,
       limit: pageSize,
     };
+  }
+
+  //get project by id
+  async getProjectById(projectID: number) {
+    const project = await this.prisma.project_tab.findUnique({
+      where: {
+        proID: projectID,
+      },
+      include:{
+        makwenat:true
+      }
+    });
+    return {
+      project:project};
   }
 }

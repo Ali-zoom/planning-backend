@@ -2,6 +2,7 @@ import {
   Controller,
   DefaultValuePipe,
   Get,
+  Param,
   ParseIntPipe,
   Query,
   Search,
@@ -26,5 +27,12 @@ export class ProjectsController {
       limit,
       search,
     );
+  }
+
+  //get project by id
+  @Get("project/:id")
+  getProjectByID(@Param("id",ParseIntPipe)id:number){
+    return this.ProjectsServices.getProjectById(id)
+
   }
 }
